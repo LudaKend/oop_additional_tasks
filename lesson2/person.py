@@ -11,14 +11,38 @@
 
 
 class Person:
-    pass
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
+    def __repr__(self):
+        return f'Person {self.name}, {self.age}'
+
+    def display(self):
+        print(f'{self.name} is {self.age} years old')
+
+    @classmethod
+    def from_birth_year(cls, name, birth_year):
+        cls.name = name
+        cls.age = 2023 - birth_year
+        return Person(cls.name, cls.age)
+
+    @staticmethod
+    def is_adult(age):
+        if age >= 18:
+            return True
+        return False
 
 person1 = Person("John", 28)
 person1.display()  # John is 28 years old
 
-person2 = Person.from_birth_year("Mike", 1995)
+person2 = Person.from_birth_year("Mike", 1997)
 person2.display()  # Mike is 26 years old
 
 print(Person.is_adult(20))  # True
 print(Person.is_adult(15))  # False
+
+#для отладки
+print(Person.__dict__)
+print(person1)
+print(person2.__repr__)

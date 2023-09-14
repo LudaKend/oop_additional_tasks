@@ -9,9 +9,21 @@
 - __add__(self, other): магический метод, который позволяет складывать списки и возвращать новый список.
 """
 
-
 class MyList:
-    pass
+    def __init__(self, data):
+        self.data = data
+
+    def __repr__(self):
+        return f'MyList({self.data})'
+
+    def __str__(self):
+        return f'{self.data}'
+
+    def __len__(self):
+        return len(self.data)
+
+    def __add__(self, other):
+        return self.data + other.data
 
 
 my_list1 = MyList([1, 2, 3])

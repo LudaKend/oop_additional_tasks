@@ -14,8 +14,16 @@
 
 
 class Bird:
-    pass
+    def fly(self):
+        return print("Flying")
 
+class Penguin(Bird):
+    def fly(self):
+        return print("I am a penguin and cannot fly")
+
+class Eagle(Bird):
+    def hunt(self):
+        return print("Hunting")
 
 bird = Bird()
 bird.fly()  # Flying

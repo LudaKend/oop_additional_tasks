@@ -11,16 +11,30 @@
 
 - __slots__ = ('bonus',): список атрибутов, доступных объекту.
 """
-
-
 class Person:
-    pass
+    __slots__ = ('name', 'age')
+
+    # def __init__(self, name, age):
+    #     self.name = name
+    #     self.age = age
+
+class Employee(Person):
+    __slots__ = ('salary')
+
+    # def __init__(self, salary,):
+    #     self.salary = salary
+
+class Manager(Employee):
+    __slots__ = ('bonus')
+
+    # def __init__(self, bonus,):
+    #     self.bonus = bonus
 
 
 person = Person()
 person.name = "John"
 person.age = 30
-person.salary = 5000  # raises AttributeError
+#person.salary = 5000  # raises AttributeError
 
 employee = Employee()
 employee.name = "Jane"

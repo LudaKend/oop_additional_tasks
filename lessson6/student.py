@@ -10,8 +10,10 @@
 
 
 class Student:
-    pass
+    __slots__ = ('name', 'age', 'grades')
 
+class Course:
+    __slots__ = ('name', 'students')
 
 student1 = Student()
 student1.name = "John"

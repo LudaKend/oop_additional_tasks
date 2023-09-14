@@ -15,16 +15,18 @@
 class Number:
 
     def __init__(self, value):
-        ...
+        self.value = value
 
-    def ...(self):
-        ...
+    def get(self):
+        return self.value
 
-    def ...:
-        ...
+    def add(self, argument):
+        self.value = self.value + argument
+        return self.value
 
-    def ...:
-        ...
+    def substract(self, argument):
+        self.value = self.value - argument
+        return self.value
 
 
 n = Number(7)
@@ -33,3 +35,5 @@ n.add(3)
 print(n.get())  # 10
 n.substract(5)
 print(n.get())  # 5
+
+#Здесь вопрос: зачем писать методы add, substract, если есть магические __add__, __sub__?
